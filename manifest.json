@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "autofill",
+    "version": "1.0",
+    "description": "当打开 Google 主页时自动填写指定的问题到搜索框",
+    "permissions": [],
+    "background.service_worker": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "./scripts/content.js",
+                "./scripts/jquery.min.js"
+            ],
+            "matches": [
+                "https://www.google.com/*"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "./images/1.jpg",
+        "32": "./images/1.jpg",
+        "48": "./images/1.jpg",
+        "128": "./images/1.jpg"
+    }
+}
